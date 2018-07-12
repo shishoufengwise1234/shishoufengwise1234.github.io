@@ -15,19 +15,19 @@
 
 
 
-<meta name="description" content="+">
+<meta name="description" content="引言：前期准备1、Git2、Hexo3、Sublime Text34、注册GitHub账号 注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可 配置GitHub1、新建Respsitory其中Repository name 必须按照 GitHub 注册名字+ .github.io 填写  Description 填写相应的描述即可。创建仓库">
 <meta name="keywords" content="杂项,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录">
 <meta property="og:url" content="https://shishoufengwise1234.github.io/blog/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/index.html">
 <meta property="og:site_name" content="Sky">
-<meta property="og:description" content="+">
+<meta property="og:description" content="引言：前期准备1、Git2、Hexo3、Sublime Text34、注册GitHub账号 注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可 配置GitHub1、新建Respsitory其中Repository name 必须按照 GitHub 注册名字+ .github.io 填写  Description 填写相应的描述即可。创建仓库">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://shishoufengwise1234.github.io/img/images/create_respsitory.png">
-<meta property="og:updated_time" content="2018-07-12T06:35:44.864Z">
+<meta property="og:updated_time" content="2018-07-12T07:10:37.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录">
-<meta name="twitter:description" content="+">
+<meta name="twitter:description" content="引言：前期准备1、Git2、Hexo3、Sublime Text34、注册GitHub账号 注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可 配置GitHub1、新建Respsitory其中Repository name 必须按照 GitHub 注册名字+ .github.io 填写  Description 填写相应的描述即可。创建仓库">
 <meta name="twitter:image" content="https://shishoufengwise1234.github.io/img/images/create_respsitory.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -76,7 +76,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
+        search: true
     }
 </script>
 
@@ -110,6 +110,13 @@
         <p class="header-subtitle">ShiShouFeng</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -165,6 +172,8 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
                             <li><a href="/tags/">标签云</a></li>
                         
                             <li><a href="/about/">关于我</a></li>
@@ -174,11 +183,17 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" href="/shishoufeng1227@126.com" title="Email"></a>
                             
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" href="https://github.com/shishoufengwise1234" title="GitHub"></a>
                             
                                 <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/77bbafa190f3" title="简书"></a>
+                            
+                                <a class="fa 网易云音乐" href="/慢慢的听一首歌" title="网易云音乐"></a>
+                            
+                                <a class="fa 微信" href="/LIVE88486" title="微信"></a>
                             
                         </ul>
                     </nav>
@@ -210,7 +225,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">业余程序猿</div>
                 </section>
                 
             </div>
@@ -242,6 +257,8 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
                     <li><a href="/tags/">标签云</a></li>
                 
                     <li><a href="/about/">关于我</a></li>
@@ -252,11 +269,17 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="/shishoufeng1227@126.com" title="Email"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" target="_blank" href="https://github.com/shishoufengwise1234" title="GitHub"></a>
                             
                                 <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/77bbafa190f3" title="简书"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="/慢慢的听一首歌" title="网易云音乐"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/LIVE88486" title="微信"></a>
                             
                         </ul>
             </nav>
@@ -304,9 +327,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>+<a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br><!-- ## 使用Hexo + GitHub Pagers + SublimeText3 + Mardown 搭建blog记录 --></the></p>
-<h4 id="引言："><a href="#引言：" class="headerlink" title="引言："></a>引言：</h4><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p>1、<a href="https://git-scm.com/" title="Git" target="_blank" rel="noopener">Git</a><br><br>2、<a href="https://hexo.io/zh-cn/docs/" title="Hexo" target="_blank" rel="noopener">Hexo</a><br><br>3、<a href="https://www.sublimetext.com/" title="Sublime Text3" target="_blank" rel="noopener">Sublime Text3</a><br><br>4、注册GitHub账号</p>
+        <h4 id="引言："><a href="#引言：" class="headerlink" title="引言："></a>引言：</h4><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p>1、<a href="https://git-scm.com/" title="Git" target="_blank" rel="noopener">Git</a><br><br>2、<a href="https://hexo.io/zh-cn/docs/" title="Hexo" target="_blank" rel="noopener">Hexo</a><br><br>3、<a href="https://www.sublimetext.com/" title="Sublime Text3" target="_blank" rel="noopener">Sublime Text3</a><br><br>4、注册GitHub账号</p>
 <p>注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可</p>
 <h4 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置GitHub</h4><p>1、新建Respsitory<br><br><img src="/img/images/create_respsitory.png"><br>其中Repository name 必须按照 GitHub 注册名字+ .github.io 填写  Description 填写相应的描述即可。创建仓库成功之后 会存在you name + .github.io 的仓库。  </p>
 <!-- <meta http-equiv="refresh" content="5"> -->
@@ -320,7 +341,7 @@
         <p><span>本文标题:</span><a href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">ShiShouFeng</a></p>
         <p><span>发布时间:</span>2018-07-11, 14:59:22</p>
-        <p><span>最后更新:</span>2018-07-12, 14:35:44</p>
+        <p><span>最后更新:</span>2018-07-12, 15:10:37</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/" title="使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录">https://shishoufengwise1234.github.io/blog/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/</a>
             <span class="copy-path" data-clipboard-text="原文: https://shishoufengwise1234.github.io/blog/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/　　作者: ShiShouFeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
