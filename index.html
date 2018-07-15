@@ -205,7 +205,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂项/">杂项</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂项/">杂项</a></li></ul>
                     </div>
                 </section>
                 
@@ -291,6 +291,78 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Git使用记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/15/Git使用记录/" class="article-date">
+      <time datetime="2018-07-15T05:16:02.000Z" itemprop="datePublished">2018-07-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/15/Git使用记录/">Git使用记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://git-scm.com/" title="Git" target="_blank" rel="noopener">Git</a> 是最优秀的分布式代码管理工具、有关git的使用很多文章 在这里推荐一个不错的学习网站 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="点击这里" target="_blank" rel="noopener">点击这里</a>  本文仅收集在使用Git过程中遇到的问题、进行记录 以便日后查找 不断更新中…</p>
+<h3 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h3><h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p>执行此命令之后、会在当前文件夹下生成 .git 隐藏文件 用于管理仓库</p>
+<h4 id="add"><a href="#add" class="headerlink" title="add"></a>add</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add &lt;file ...&gt;</span><br></pre></td></tr></table></figure>
+<p>使用 add 命令 用于将文件添加到版本控制内 可以使用 add .  添加所有文件</p>
+<h4 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;fist commit&quot;</span><br></pre></td></tr></table></figure>
+<p>使用 commit 提交文件 “” 添加提交注释  注意这个提交只是提交到了“暂存区” 执行命令后、会生成一个44位的 commit Id </p>
+<h4 id="push"><a href="#push" class="headerlink" title="push"></a>push</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+<p>使用 push 命令 将提交到暂存区的文件推送到服务器</p>
+<h4 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<p>使用 pull 命令 更新本地文件</p>
+<h4 id="pull-1"><a href="#pull-1" class="headerlink" title="pull"></a>pull</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<p>使用 pull 命令 更新本地文件</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Android开发中琐碎问题记录" class="article article-type-post" itemscope itemprop="blogPost">
   
