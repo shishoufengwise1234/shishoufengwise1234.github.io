@@ -14,20 +14,19 @@
 <meta name="author" content="ShiShouFeng" />
 
 
-    
-    
 
-
-<meta name="description" content="一个普通的码农工作中的点滴记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sky">
-<meta property="og:url" content="https://shishoufengwise1234.github.io/blog/index.html">
+<meta name="description" content="反射是什么先看看 Oracle  官方给出的解释 123Reflection is a feature in the Java programming language. It allows an executing Java program to examine or &amp;quot;introspect&amp;quot; upon itself, and manipulate internal prop">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java-反射《一》">
+<meta property="og:url" content="https://shishoufengwise1234.github.io/blog/2018/08/22/Java-反射《一》/index.html">
 <meta property="og:site_name" content="Sky">
-<meta property="og:description" content="一个普通的码农工作中的点滴记录">
+<meta property="og:description" content="反射是什么先看看 Oracle  官方给出的解释 123Reflection is a feature in the Java programming language. It allows an executing Java program to examine or &amp;quot;introspect&amp;quot; upon itself, and manipulate internal prop">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-23T08:25:46.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sky">
-<meta name="twitter:description" content="一个普通的码农工作中的点滴记录">
+<meta name="twitter:title" content="Java-反射《一》">
+<meta name="twitter:description" content="反射是什么先看看 Oracle  官方给出的解释 123Reflection is a feature in the Java programming language. It allows an executing Java program to examine or &amp;quot;introspect&amp;quot; upon itself, and manipulate internal prop">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,13 +54,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Sky</title>
+<title>Java-反射《一》 | Sky</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -70,8 +67,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -290,9 +287,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Java-反射《一》" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Java-反射《一》" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/08/22/Java-反射《一》/" class="article-date">
@@ -310,12 +305,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/22/Java-反射《一》/">Java-反射《一》</a>
+    <h1 class="article-title" itemprop="name">
+      Java-反射《一》
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -374,601 +380,119 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/22/Java-反射《一》/">Java-反射《一》</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">ShiShouFeng</a></p>
+        <p><span>发布时间:</span>2018-08-22, 10:35:27</p>
+        <p><span>最后更新:</span>2018-08-23, 16:25:46</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/22/Java-反射《一》/" title="Java-反射《一》">https://shishoufengwise1234.github.io/blog/2018/08/22/Java-反射《一》/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://shishoufengwise1234.github.io/blog/2018/08/22/Java-反射《一》/　　作者: ShiShouFeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/05/Android-面试问题总结一Java篇/">
+                    Android-面试问题总结一Java篇
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android-面试问题总结一Java篇" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/05/Android-面试问题总结一Java篇/" class="article-date">
-      <time datetime="2018-08-05T09:07:50.000Z" itemprop="datePublished">2018-08-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/05/Android-面试问题总结一Java篇/">Android-面试问题总结一Java篇</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#反射是什么"><span class="toc-number">1.</span> <span class="toc-text">反射是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-反射API"><span class="toc-number">2.</span> <span class="toc-text">Java 反射API</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Class-类"><span class="toc-number">2.0.1.</span> <span class="toc-text">Class 类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Field-类"><span class="toc-number">2.0.2.</span> <span class="toc-text">Field 类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Method-类"><span class="toc-number">2.0.3.</span> <span class="toc-text">Method 类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Constructor-类"><span class="toc-number">2.0.4.</span> <span class="toc-text">Constructor 类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反射的使用"><span class="toc-number">3.</span> <span class="toc-text">反射的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#获取所有属性"><span class="toc-number">3.0.1.</span> <span class="toc-text">获取所有属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取所有方法"><span class="toc-number">3.0.2.</span> <span class="toc-text">获取所有方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#调用私有方法"><span class="toc-number">3.0.3.</span> <span class="toc-text">调用私有方法</span></a></li></ol></li></ol></li></ol>
         
-      
     </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-5 i,
+        .toc-level-5 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+<div class="share">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android虚拟机相关问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/08/05/Android虚拟机相关问题/" class="article-date">
-      <time datetime="2018-08-05T08:13:39.000Z" itemprop="datePublished">2018-08-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Java-反射《一》　| Sky　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     
-      <input type="hidden" class="isFancy" />
+
     
+</div>
+
+
+
+
+
+
+
     
-      <header class="article-header">
+
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/05/Android虚拟机相关问题/">Android虚拟机相关问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Android 虚拟机 是不同于Java 的 JVM 虚拟机。Android 虚拟机 分为两种 Dalvik 5.0以上 Art</span><br></pre></td></tr></table></figure>
-<h3 id="Dalvik"><a href="#Dalvik" class="headerlink" title="Dalvik"></a>Dalvik</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Dalvik VM 虚拟机 是Google等厂商合作开发的Android虚拟机 执行文件格式为 .dex</span><br><span class="line">大多数虚拟机包括JVM都是一种堆栈机器，而Dalvik虚拟机则是寄存器机。两种架构各有优劣，</span><br><span class="line">一般而言，基于堆栈的机器需要更多指令，而基于寄存器的机器指令更长。</span><br></pre></td></tr></table></figure>
-<h3 id="Art"><a href="#Art" class="headerlink" title="Art"></a>Art</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Android Runtime (ART) 是 Android 上的应用和部分系统服务使用的托管式运行时。</span><br><span class="line">ART 及其前身 Dalvik 最初是专为 Android 项目打造的。</span><br><span class="line">作为运行时的 ART 可执行 Dalvik 可执行文件并遵循 Dex 字节码规范。</span><br></pre></td></tr></table></figure>
-<h4 id="Art-一些功能"><a href="#Art-一些功能" class="headerlink" title="Art 一些功能"></a>Art 一些功能</h4><h5 id="预先-AOT-编译"><a href="#预先-AOT-编译" class="headerlink" title="预先 (AOT) 编译"></a>预先 (AOT) 编译</h5><p>ART 引入了预先编译机制，可提高应用的性能。ART 还具有比 Dalvik 更严格的安装时验证。</p>
-<p>在安装时，ART 使用设备自带的 dex2oat 工具来编译应用。该实用工具接受 DEX 文件作为输入，并为目标设备生成经过编译的应用可执行文件。该工具应能够顺利编译所有有效的 DEX 文件。但是，一些后处理工具会生成无效文件，Dalvik 可以接受这些文件，但 ART 无法编译这些文件。有关详情，请参阅解决垃圾回收问题。</p>
-<h5 id="垃圾回收方面的优化"><a href="#垃圾回收方面的优化" class="headerlink" title="垃圾回收方面的优化"></a>垃圾回收方面的优化</h5><p>垃圾回收 (GC) 可能有损于应用性能，从而导致显示不稳定、界面响应速度缓慢以及其他问题。ART 通过以下几种方式对垃圾回收做了优化：</p>
-<blockquote>
-<ul>
-<li><p>只有一次（而非两次）GC 暂停</p>
-</li>
-<li><p>在 GC 保持暂停状态期间并行处理</p>
-</li>
-<li><p>在清理最近分配的短时对象这种特殊情况中，回收器的总 GC 时间更短</p>
-</li>
-<li><p>优化了垃圾回收的工效，能够更加及时地进行并行垃圾回收，这使得 GC_FOR_ALLOC 事件在典型用例中极为罕见</p>
-</li>
-<li><p>压缩 GC 以减少后台内存使用和碎片</p>
-</li>
-</ul>
-</blockquote>
-<h5 id="开发和调试方面的优化"><a href="#开发和调试方面的优化" class="headerlink" title="开发和调试方面的优化"></a>开发和调试方面的优化</h5><p>ART 提供了大量功能来优化应用开发和调试。</p>
-<h6 id="支持采样分析器"><a href="#支持采样分析器" class="headerlink" title="支持采样分析器"></a>支持采样分析器</h6><p>一直以来，开发者都使用 Traceview 工具（用于跟踪应用执行情况）作为分析器。虽然 Traceview 可提供有用的信息，但每次方法调用产生的开销会导致 Dalvik 分析结果出现偏差，而且使用该工具明显会影响运行时性能。</p>
-<p>ART 添加了对没有这些限制的专用采样分析器的支持，因而可更准确地了解应用执行情况，而不会明显减慢速度。KitKat 版本为 Dalvik 的 Traceview 添加了采样支持。</p>
-<h6 id="支持更多调试功能"><a href="#支持更多调试功能" class="headerlink" title="支持更多调试功能"></a>支持更多调试功能</h6><p>ART 支持许多新的调试选项，特别是与监控和垃圾回收相关的功能。例如，您可以：</p>
-<blockquote>
-<ul>
-<li><p>查看堆栈跟踪中保留了哪些锁，然后跳转到持有锁的线程。</p>
-</li>
-<li><p>询问指定类的当前活动的实例数、请求查看实例，以及查看使对象保持有效状态的参考。</p>
-</li>
-<li><p>过滤特定实例的事件（如断点）。</p>
-</li>
-<li><p>查看方法退出（使用“method-exit”事件）时返回的值。</p>
-</li>
-<li><p>设置字段观察点，以在访问和/或修改特定字段时暂停程序执行。</p>
-</li>
-</ul>
-</blockquote>
-<h6 id="优化了异常和崩溃报告中的诊断详细信息"><a href="#优化了异常和崩溃报告中的诊断详细信息" class="headerlink" title="优化了异常和崩溃报告中的诊断详细信息"></a>优化了异常和崩溃报告中的诊断详细信息</h6><p>当发生运行时异常时，ART 会为您提供尽可能多的上下文和详细信息。ART 会提供 java.lang.ClassCastException、java.lang.ClassNotFoundException 和 java.lang.NullPointerException 的更多异常详细信息（较高版本的 Dalvik 会提供 java.lang.ArrayIndexOutOfBoundsException 和 java.lang.ArrayStoreException 的更多异常详细信息，这些信息现在包括数组大小和超出范围的偏移量；ART 也提供这类信息）。</p>
-<p>ART 还通过纳入 Java 和原生堆栈信息，在应用原生代码崩溃报告中提供更实用的上下文信息。</p>
-<p>参考文章：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://source.android.com/devices/tech/dalvik/</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂项/">杂项</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Android-TextView使用记录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/21/Android-TextView使用记录/" class="article-date">
-      <time datetime="2018-07-21T05:00:03.000Z" itemprop="datePublished">2018-07-21</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/21/Android-TextView使用记录/">Android-TextView使用记录</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
         
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Git使用记录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/15/Git使用记录/" class="article-date">
-      <time datetime="2018-07-15T05:16:02.000Z" itemprop="datePublished">2018-07-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a href="/2018/08/05/Android-面试问题总结一Java篇/" title="下一篇: Android-面试问题总结一Java篇">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/Git使用记录/">Git使用记录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://git-scm.com/" title="Git" target="_blank" rel="noopener">Git</a> 是最优秀的分布式代码管理工具、有关git的使用很多文章 在这里推荐一个不错的学习网站 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="点击这里" target="_blank" rel="noopener">点击这里</a>  本文仅收集在使用Git过程中遇到的问题、进行记录 以便日后查找 不断更新中…</p>
-<h3 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h3><h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-<p>执行此命令之后、会在当前文件夹下生成 .git 隐藏文件 用于管理仓库</p>
-<h4 id="add"><a href="#add" class="headerlink" title="add"></a>add</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add &lt;file ...&gt;</span><br></pre></td></tr></table></figure>
-<p>使用 add 命令 用于将文件添加到版本控制内 可以使用 add .  添加所有文件</p>
-<h4 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;fist commit&quot;</span><br></pre></td></tr></table></figure>
-<p>使用 commit 提交文件 “” 添加提交注释  注意这个提交只是提交到了“暂存区” 执行命令后、会生成一个44位的 commit Id </p>
-<h4 id="push"><a href="#push" class="headerlink" title="push"></a>push</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-<p>使用 push 命令 将提交到暂存区的文件推送到服务器</p>
-<h4 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<p>使用 pull 命令 更新本地文件</p>
-<h4 id="pull-1"><a href="#pull-1" class="headerlink" title="pull"></a>pull</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<p>使用 pull 命令 更新本地文件</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/Java-反射《一》/">Java-反射《一》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android-面试问题总结一Java篇/">Android-面试问题总结一Java篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android虚拟机相关问题/">Android虚拟机相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/Android-TextView使用记录/">Android-TextView使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Git使用记录/">Git使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Android开发中琐碎问题记录/">Android开发中琐碎问题记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/hello-world/">Hello World</a></li></ul>
 
 
 
 
-
-
-
-
-
-  
-    <article id="post-Android开发中琐碎问题记录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/15/Android开发中琐碎问题记录/" class="article-date">
-      <time datetime="2018-07-15T04:56:38.000Z" itemprop="datePublished">2018-07-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <script>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/Android开发中琐碎问题记录/">Android开发中琐碎问题记录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>在 Android 日常开发中会遇到很多奇葩问题解决之后、特在此记录 以便以后用到方便查询！后续不断更新中！</p>
-<h4 id="小米手机无法使用-Android-studio-Instant-Run-功能"><a href="#小米手机无法使用-Android-studio-Instant-Run-功能" class="headerlink" title="小米手机无法使用 Android studio Instant Run 功能"></a>小米手机无法使用 Android studio Instant Run 功能</h4><p>打开设置 - 开发者选项 - 关闭MIUI优化 重启手机即可</p>
-<h4 id="华为手机无法打印-Log"><a href="#华为手机无法打印-Log" class="headerlink" title="华为手机无法打印 Log"></a>华为手机无法打印 Log</h4><p>打开 拨号界面 输入 <em>#</em>#2846579#<em>#</em> 启动显示出工程设置模式 找到 后台设置 - log设置 - 勾选所有日志输出  重启手机即可</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/" class="article-date">
-      <time datetime="2018-07-11T06:59:22.000Z" itemprop="datePublished">2018-07-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="引言："><a href="#引言：" class="headerlink" title="引言："></a>引言：</h4><pre><code>从安装软件到发布文章 期间遇到太多的坑了、真是分分钟想放弃 到最后完成 特写一篇文章 记录其中的问题、希望能帮到有需要的人！
-</code></pre><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p>1、<a href="https://git-scm.com/" title="Git" target="_blank" rel="noopener">Git</a><br><br>2、<a href="https://hexo.io/zh-cn/docs/" title="Hexo" target="_blank" rel="noopener">Hexo</a><br><br>3、<a href="https://www.sublimetext.com/" title="Sublime Text3" target="_blank" rel="noopener">Sublime Text3</a><br><br>4、注册GitHub账号</p>
-<p>注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可</p>
-<h4 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置GitHub</h4><p>1、新建Respsitory<br><br><img src="/img/images/create_respsitory.png"><br>其中Repository name 必须按照 GitHub 注册名字+ .github.io 填写  Description 填写相应的描述即可。创建仓库成功之后 会存在you name + .github.io 的仓库。  </p>
-<h4 id="安装并配置-Hexo"><a href="#安装并配置-Hexo" class="headerlink" title="安装并配置 Hexo"></a>安装并配置 Hexo</h4><p>我们已经有了“仓库”来存储我们的blog、但是我们还缺一个服务器来部署我们的blog 现在就开始吧！</p>
-<p>假如你已经安装了 <a href="https://nodejs.org/en/" title="Node.js" target="_blank" rel="noopener">Node.js</a>  和 <a href="https://git-scm.com/" title="Git" target="_blank" rel="noopener">Git</a><br>那么执行 npm 命令 即可完成 Hexo 的安装。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成之后会在本地生成blog文件夹、blog文件结构如下</p>
-<p><img src="/img/2018-07/Snip20180713_12.png"></p>
-<p>其中 public 文件下为发布文件、themes 文件夹为blog样式配置</p>
-<h5 id="关联GitHub"><a href="#关联GitHub" class="headerlink" title="关联GitHub"></a>关联GitHub</h5><p>打开_config.yml 文件 找到最底部 deploy 改成自己的git 仓库路径</p>
-<p><img src="/img/2018-07/Snip20180713_13.png"></p>
-<p>其中 type -&gt; git</p>
-<p>repository 改成自己的git仓库路径 </p>
-<p>branch -&gt; master</p>
-<h4 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h4><h5 id="init"><a href="#init" class="headerlink" title="init"></a>init</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-<p>init 命令用于新建网站、基本上只会执行一次</p>
-<h5 id="new"><a href="#new" class="headerlink" title="new"></a>new</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &lt;file name&gt;</span><br></pre></td></tr></table></figure>
-<p>new 命令 用于创建一篇新文章</p>
-<h5 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>用于生成静态文件、可缩写为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h5 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;file name&gt;</span><br></pre></td></tr></table></figure>
-<p>用于发布文章</p>
-<h5 id="server"><a href="#server" class="headerlink" title="server"></a>server</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>启动服务器 默认访问地址 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -p 5000 </span><br><span class="line">$ hexo -s </span><br><span class="line">$ hexo -l</span><br></pre></td></tr></table></figure>
-<p>-p 用于重新设置端口、-s 设置只使用静态文件、-l 启动日志记录</p>
-<h5 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>部署网站 可缩写为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<h5 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-<p>清除缓存文件和已经生成的静态文件</p>
-<p>注：在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，可能需要运行该命令</p>
-<h5 id="list"><a href="#list" class="headerlink" title="list"></a>list</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo list</span><br></pre></td></tr></table></figure>
-<p>列出网站所有信息</p>
-<p>其他更多命令请查看 <a href="https://hexo.io/zh-cn/docs/commands.html" title="官网" target="_blank" rel="noopener">官网</a></p>
-<h4 id="安装Sublime-Text3-插件-Package-Control"><a href="#安装Sublime-Text3-插件-Package-Control" class="headerlink" title="安装Sublime Text3 插件 Package Control"></a>安装Sublime Text3 插件 Package Control</h4><p>我们前面已经安装了 Sublime Text3 现在我们将 安装相应的插件以支持 markdown 实时预览编辑文件</p>
-<p>1、安装package control 插件最简单的方式 是采用官网Python代码安装 <br></p>
-<blockquote>
-<p>代码安装</p>
-</blockquote>
-<p>View -&gt; Show Console 打开Console 控制台 执行下列代码或者在官网查看最新代码 <a href="https://packagecontrol.io/installation#st3" target="_blank" rel="noopener">https://packagecontrol.io/installation#st3</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'6f4c264a24d933ce70df5dedcf1dcaee'</span> + <span class="string">'ebe013ee18cced0ef93d5f746d80ef60'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure></p>
-<p>安装完成之后 ctrl + shift + p 或 在Preferences 会显示 Package Control 选项 [如果没有出现 则在 打开 Preferences -&gt; Settings ]<br>在右侧 Preferences.sublime-settings-User 中将 ignored_package 中 “Package Control”删除、保存 即可</p>
-<p><img src="/img/2018-07/Snip20180712_10.png"> </p>
-<blockquote>
-<p>下载包安装</p>
-</blockquote>
-<p>点击此处<a href="https://packagecontrol.io/Package%20Control.sublime-package" title="下载" target="_blank" rel="noopener">下载</a> 最新 Package Control 安装包 或者 <a href="https://packagecontrol.io/installation" title="官网下载" target="_blank" rel="noopener">官网下载</a>、放到 Sublime Text3 安装包 Installed Packages 目录下、重启 Sublime 即可。</p>
-<p>2、安装 MarkdownEditing、MarkdownPreview、auto-save 插件</p>
-<p>通过Package Control 安装插件很简单 ctrl + alt + p 显示搜索界面 输入 install package 确定</p>
-<p><img src="/img/2018-07/Snip20180713_11.png"> </p>
-<p>相应输入 MarkdownEditing、MarkdownPreview、auto-save 插件并安装 </p>
-<p><img src="/img/2018-07/install_23_12.png"> </p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>1、新建文章</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page hello</span><br></pre></td></tr></table></figure>
-<p>会在 blog/source/ 新建文章 以hello 为命名的文件夹的 index.md 文件</p>
-<p>2、使用 sublime 编辑文件</p>
-<p><img src="/img/2018-07/Snip20180713_14.png"> </p>
-<p>其中 title 为文章标题</p>
-<p>编辑文章 文章使用markdown 语法编辑 可以在此了解 markdown [语法] (<a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener">https://github.com/younghz/Markdown</a> “语法”)</p>
-<p>3、 实时预览文件</p>
-<p>配置auto-save 插件 打开auto-save 设置 </p>
-<p><img src="/img/2018-07/Snip20180713_15.png"> </p>
-<p>打开 user-settigns 文件 修改成如下：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"auto_save_delay_in_seconds"</span>: <span class="number">0.15</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中 auto_save_delay_in_seconds 是保存刷新时间</p>
-<h6 id="启动-auto-save-插件"><a href="#启动-auto-save-插件" class="headerlink" title="启动 auto-save 插件"></a>启动 auto-save 插件</h6><p>ctrl + alt + p 调出控制面板 输入 auto-save 启动插件</p>
-<h6 id="启动-markdown-preview-插件"><a href="#启动-markdown-preview-插件" class="headerlink" title="启动 markdown preview  插件"></a>启动 markdown preview  插件</h6><p>ctrl + alt + p 调出控制面板 输入 mp 找到 Markdown Preview 启动插件 会调起本地浏览器 预览当前页面</p>
-<p>4、 发布文章</p>
-<blockquote>
-<p>编译文章</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p>使用 hexo g 编译出静态文件</p>
-<blockquote>
-<p>启动服务器预览文章</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>默认打开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 预览</p>
-<blockquote>
-<p>发布文章</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>在 <a href="https://you-github-name.github.io/" target="_blank" rel="noopener">https://you-github-name.github.io/</a> 地址 查看！</p>
-<h5 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h5><p>至此 从安装软件到编写blog再到发布文章、中间历经很多问题 还有很多问题 后续遇到再做补充！</p>
-<p>谢谢 一下作者的文章帮助！</p>
-<blockquote>
-<p>参考文章：</p>
-<p><a href="https://www.jianshu.com/p/13e64c9e2295" target="_blank" rel="noopener">https://www.jianshu.com/p/13e64c9e2295</a></p>
-<p><a href="https://blog.csdn.net/qazxswed807/article/details/51235792" target="_blank" rel="noopener">https://blog.csdn.net/qazxswed807/article/details/51235792</a></p>
-<p><a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener">https://github.com/younghz/Markdown</a></p>
-<p><a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="noopener">https://github.com/SublimeText-Markdown/MarkdownEditing</a></p>
-<p><a href="https://github.com/MOxFIVE/yelee" target="_blank" rel="noopener">https://github.com/MOxFIVE/yelee</a></p>
-<p><a href="http://moxfive.xyz/2015/08/20/blog-building/" target="_blank" rel="noopener">http://moxfive.xyz/2015/08/20/blog-building/</a></p>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂项/">杂项</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/06/29/hello-world/" class="article-date">
-      <time datetime="2018-06-29T02:16:10.893Z" itemprop="datePublished">2018-06-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
