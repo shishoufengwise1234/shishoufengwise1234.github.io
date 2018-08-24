@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="ShiShouFeng" />
+
+
+
+<meta name="description" content="平时进行Android 开发中 经常会用到ADB命令 特将常用的命令收集起来 以便日后查找 开启 adb 服务和停止使用 start-server 检查 adb 服务器进程是否在运行，如果未运行则启动它。kill-server 停止adb 服务 1234adb start-serveradb kill-server 常规12adb deivces 将展示目前连接的设备列表列： 12345adb d">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android-adb命令收集">
+<meta property="og:url" content="https://shishoufengwise1234.github.io/blog/2018/08/24/Android-adb命令收集/index.html">
+<meta property="og:site_name" content="Sky">
+<meta property="og:description" content="平时进行Android 开发中 经常会用到ADB命令 特将常用的命令收集起来 以便日后查找 开启 adb 服务和停止使用 start-server 检查 adb 服务器进程是否在运行，如果未运行则启动它。kill-server 停止adb 服务 1234adb start-serveradb kill-server 常规12adb deivces 将展示目前连接的设备列表列： 12345adb d">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-24T08:08:36.495Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android-adb命令收集">
+<meta name="twitter:description" content="平时进行Android 开发中 经常会用到ADB命令 特将常用的命令收集起来 以便日后查找 开启 adb 服务和停止使用 start-server 检查 adb 服务器进程是否在运行，如果未运行则启动它。kill-server 停止adb 服务 1234adb start-serveradb kill-server 常规12adb deivces 将展示目前连接的设备列表列： 12345adb d">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sky" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Android-adb命令收集 | Sky</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">ShiShouFeng</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">ShiShouFeng</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/shishoufeng1227@126.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/shishoufengwise1234" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/77bbafa190f3" title="简书"></a>
+                            
+                                <a class="fa 网易云音乐" href="/慢慢的听一首歌" title="网易云音乐"></a>
+                            
+                                <a class="fa 微信" href="/LIVE88486" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂项/">杂项</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">业余程序猿</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">ShiShouFeng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">ShiShouFeng</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">ShiShouFeng</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/shishoufeng1227@126.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/shishoufengwise1234" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/77bbafa190f3" title="简书"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="/慢慢的听一首歌" title="网易云音乐"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/LIVE88486" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Android-adb命令收集" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/24/Android-adb命令收集/" class="article-date">
+      <time datetime="2018-08-24T03:36:18.000Z" itemprop="datePublished">2018-08-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android-adb命令收集
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>平时进行Android 开发中 经常会用到ADB命令 特将常用的命令收集起来 以便日后查找</p>
+<h4 id="开启-adb-服务和停止"><a href="#开启-adb-服务和停止" class="headerlink" title="开启 adb 服务和停止"></a>开启 adb 服务和停止</h4><p>使用 start-server 检查 adb 服务器进程是否在运行，如果未运行则启动它。kill-server 停止adb 服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">adb start-server</span><br><span class="line"></span><br><span class="line">adb kill-server</span><br></pre></td></tr></table></figure>
+<h4 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">adb deivces</span><br></pre></td></tr></table></figure>
+<p>将展示目前连接的设备列表列：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line">List of devices attached</span><br><span class="line">emulator-5554  device</span><br><span class="line">emulator-5556  device</span><br><span class="line">emulator-5558  device</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> 输出支持的 adb 命令的列表。</span><br><span class="line">adb help</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 输出 adb 版本号。</span><br><span class="line">adb version</span><br></pre></td></tr></table></figure>
+<h4 id="选择设备"><a href="#选择设备" class="headerlink" title="选择设备"></a>选择设备</h4><p>当连接多个设备时、通过 -s &lt;设备名称&gt; 选择指定的设备、例如 安装程序到指定设备</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">adb -s emulator-5556 install helloWorld.apk</span><br></pre></td></tr></table></figure>
+<h4 id="安装和卸载程序"><a href="#安装和卸载程序" class="headerlink" title="安装和卸载程序"></a>安装和卸载程序</h4><p>使用 install 命令安装程序 使用 uninstall 卸载指定程序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">adb install helloworld.apk</span><br><span class="line"></span><br><span class="line">adb uninstall &lt;package name&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="文件导入和导出"><a href="#文件导入和导出" class="headerlink" title="文件导入和导出"></a>文件导入和导出</h4><p>使用 pull 命令 将文件从 设备中导入到电脑 指定目录、使用 push 命令 将文件导入到设备指定目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">adb pull &lt;file name&gt; &lt;local path&gt;</span><br><span class="line"></span><br><span class="line">adb push &lt;local path&gt; &lt;remote path&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> 将日志输出到控制台 但是会持续打印 可以添加 参数 -d 过滤</span><br><span class="line">adb logcat </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 将 dumpsys、dumpstate 和 logcat 数据输出到屏幕，以用于报告错误。打成一zip压缩包的形式</span><br><span class="line">adb bugreport</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 输出给定设备上可用的 JDWP 进程的列表。</span><br><span class="line">adb jdwp</span><br></pre></td></tr></table></figure>
+<h4 id="shell-命令"><a href="#shell-命令" class="headerlink" title="shell 命令"></a>shell 命令</h4><p>使用 adb shell 进入 shell 面板、使用 control + z 或者 exit 退出</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> 进入 shell 命令面板</span><br><span class="line">adb shell </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 退出 shell 命令面板</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<h4 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h4><p>使用 screencap 截取当前设备图片</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> 进入shell面板</span><br><span class="line"><span class="meta">$</span> adb shell</span><br><span class="line"><span class="meta">#</span> 截取当前图片 保存到 sdcard 文件下</span><br><span class="line"><span class="meta">$</span> screencap /sdcard/screen.png</span><br><span class="line"><span class="meta">#</span> 退出 shell 面板</span><br><span class="line"><span class="meta">$</span> exit</span><br><span class="line"><span class="meta">#</span> 将图片导出到本地</span><br><span class="line"><span class="meta">$</span> adb pull /sdcard/screen.png</span><br></pre></td></tr></table></figure>
+<h4 id="调试-Activity-Manager"><a href="#调试-Activity-Manager" class="headerlink" title="调试 Activity Manager"></a>调试 Activity Manager</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> 杀死指定进程</span><br><span class="line">adb kill &lt;package name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 杀死所有后天进程</span><br><span class="line">adb kill-all</span><br></pre></td></tr></table></figure>
+<h4 id="参考-Intent-参数详解"><a href="#参考-Intent-参数详解" class="headerlink" title="参考 Intent 参数详解"></a>参考 Intent 参数详解</h4><p>对于采用 intent 参数的 Activity Manager 命令，您可以使用以下选项指定 intent：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-a action</span><br><span class="line"><span class="meta">#</span> 指定 intent 操作，如“android.intent.action.VIEW”。此指定只能声明一次。</span><br><span class="line"></span><br><span class="line">-d data_uri</span><br><span class="line"><span class="meta">#</span> 指定 intent 数据 URI，如“content://contacts/people/1”。此指定只能声明一次。</span><br><span class="line"></span><br><span class="line">-t mime_type</span><br><span class="line"><span class="meta">#</span> 指定 intent MIME 类型，如“image/png”。此指定只能声明一次。</span><br><span class="line"></span><br><span class="line">-c category</span><br><span class="line"><span class="meta">#</span> 指定 intent 类别，如“android.intent.category.APP_CONTACTS”。</span><br><span class="line"></span><br><span class="line">-n component</span><br><span class="line"><span class="meta">#</span> 指定带有软件包名称前缀的组件名称以创建显式 intent，如“com.example.app/.ExampleActivity”。</span><br><span class="line"></span><br><span class="line">-f flags</span><br><span class="line"><span class="meta">#</span>将标志添加到 setFlags() 支持的 intent。</span><br><span class="line"></span><br><span class="line">--esn extra_key</span><br><span class="line"><span class="meta">#</span> 添加一个 null extra。URI intent 不支持此选项。</span><br><span class="line"></span><br><span class="line">-e|--es extra_key extra_string_value</span><br><span class="line"><span class="meta">#</span> 添加字符串数据作为键值对。</span><br><span class="line"></span><br><span class="line">--ez extra_key extra_boolean_value</span><br><span class="line"><span class="meta">#</span> 添加布尔型数据作为键值对。</span><br><span class="line"></span><br><span class="line">--ei extra_key extra_int_value</span><br><span class="line"><span class="meta">#</span> 添加整数型数据作为键值对。</span><br><span class="line"></span><br><span class="line">--el extra_key extra_long_value</span><br><span class="line"><span class="meta">#</span> 添加长整型数据作为键值对。</span><br><span class="line"></span><br><span class="line">--ef extra_key extra_float_value</span><br><span class="line"><span class="meta">#</span> 添加浮点型数据作为键值对。</span><br><span class="line"></span><br><span class="line">--eu extra_key extra_uri_value</span><br><span class="line"><span class="meta">#</span> 添加 URI 数据作为键值对。</span><br><span class="line"></span><br><span class="line">--ecn extra_key extra_component_name_value</span><br><span class="line"><span class="meta">#</span> 添加组件名称，将其作为 ComponentName 对象进行转换和传递。</span><br><span class="line"></span><br><span class="line">--eia extra_key extra_int_value[,extra_int_value...]</span><br><span class="line"><span class="meta">#</span> 添加整数数组。</span><br><span class="line"></span><br><span class="line">--ela extra_key extra_long_value[,extra_long_value...]</span><br><span class="line"><span class="meta">#</span> 添加长整型数组。</span><br><span class="line"></span><br><span class="line">--efa extra_key extra_float_value[,extra_float_value...]</span><br><span class="line"><span class="meta">#</span> 添加浮点型数组。</span><br><span class="line"></span><br><span class="line">--grant-read-uri-permission</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_GRANT_READ_URI_PERMISSION。</span><br><span class="line"></span><br><span class="line">--grant-write-uri-permission</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_GRANT_WRITE_URI_PERMISSION。</span><br><span class="line"></span><br><span class="line">--debug-log-resolution</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_DEBUG_LOG_RESOLUTION。</span><br><span class="line"></span><br><span class="line">--exclude-stopped-packages</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_EXCLUDE_STOPPED_PACKAGES。</span><br><span class="line"></span><br><span class="line">--include-stopped-packages</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_INCLUDE_STOPPED_PACKAGES。</span><br><span class="line"></span><br><span class="line">--activity-brought-to-front</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_BROUGHT_TO_FRONT。</span><br><span class="line"></span><br><span class="line">--activity-clear-top</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_CLEAR_TOP。</span><br><span class="line"></span><br><span class="line">--activity-clear-when-task-reset</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET。</span><br><span class="line"></span><br><span class="line">--activity-exclude-from-recents</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS。</span><br><span class="line"></span><br><span class="line">--activity-launched-from-history</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY。</span><br><span class="line"></span><br><span class="line">--activity-multiple-task</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_MULTIPLE_TASK。</span><br><span class="line"></span><br><span class="line">--activity-no-animation</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_NO_ANIMATION。</span><br><span class="line"></span><br><span class="line">--activity-no-history</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_NO_HISTORY。</span><br><span class="line"></span><br><span class="line">--activity-no-user-action</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_NO_USER_ACTION。</span><br><span class="line"></span><br><span class="line">--activity-previous-is-top</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_PREVIOUS_IS_TOP。</span><br><span class="line"></span><br><span class="line">--activity-reorder-to-front</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_REORDER_TO_FRONT。</span><br><span class="line"></span><br><span class="line">--activity-reset-task-if-needed</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_RESET_TASK_IF_NEEDED。</span><br><span class="line"></span><br><span class="line">--activity-single-top</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_SINGLE_TOP。</span><br><span class="line"></span><br><span class="line">--activity-clear-task</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_CLEAR_TASK。</span><br><span class="line"></span><br><span class="line">--activity-task-on-home</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_ACTIVITY_TASK_ON_HOME。</span><br><span class="line"></span><br><span class="line">--receiver-registered-only</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_RECEIVER_REGISTERED_ONLY。</span><br><span class="line"></span><br><span class="line">--receiver-replace-pending</span><br><span class="line"><span class="meta">#</span> 包含标志 FLAG_RECEIVER_REPLACE_PENDING。</span><br><span class="line"></span><br><span class="line">--selector</span><br><span class="line"><span class="meta">#</span>需要使用 -d 和 -t 选项以设置 intent 数据和类型。</span><br></pre></td></tr></table></figure>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><blockquote>
+<p><a href="https://developer.android.com/studio/command-line/adb#IntentSpec" target="_blank" rel="noopener">https://developer.android.com/studio/command-line/adb#IntentSpec</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/24/Android-adb命令收集/">Android-adb命令收集</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">ShiShouFeng</a></p>
+        <p><span>发布时间:</span>2018-08-24, 11:36:18</p>
+        <p><span>最后更新:</span>2018-08-24, 16:08:36</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/24/Android-adb命令收集/" title="Android-adb命令收集">https://shishoufengwise1234.github.io/blog/2018/08/24/Android-adb命令收集/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://shishoufengwise1234.github.io/blog/2018/08/24/Android-adb命令收集/　　作者: ShiShouFeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/22/Java-反射《一》/">
+                    Java-反射《一》
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#开启-adb-服务和停止"><span class="toc-number">1.</span> <span class="toc-text">开启 adb 服务和停止</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常规"><span class="toc-number">2.</span> <span class="toc-text">常规</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择设备"><span class="toc-number">3.</span> <span class="toc-text">选择设备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装和卸载程序"><span class="toc-number">4.</span> <span class="toc-text">安装和卸载程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件导入和导出"><span class="toc-number">5.</span> <span class="toc-text">文件导入和导出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调试"><span class="toc-number">6.</span> <span class="toc-text">调试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell-命令"><span class="toc-number">7.</span> <span class="toc-text">shell 命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#屏幕截图"><span class="toc-number">8.</span> <span class="toc-text">屏幕截图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调试-Activity-Manager"><span class="toc-number">9.</span> <span class="toc-text">调试 Activity Manager</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考-Intent-参数详解"><span class="toc-number">10.</span> <span class="toc-text">参考 Intent 参数详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章"><span class="toc-number">11.</span> <span class="toc-text">参考文章</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-5 i,
+        .toc-level-5 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Android-adb命令收集　| Sky　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/22/Java-反射《一》/" title="下一篇: Java-反射《一》">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/Android-adb命令收集/">Android-adb命令收集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/Java-反射《一》/">Java-反射《一》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android-面试问题总结一Java篇/">Android-面试问题总结一Java篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android虚拟机相关问题/">Android虚拟机相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/Android-TextView使用记录/">Android-TextView使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Git使用记录/">Git使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Android开发中琐碎问题记录/">Android开发中琐碎问题记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2018 ShiShouFeng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
