@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Sky">
 <meta property="og:description" content="前言Git 是最优秀的分布式代码管理工具、有关git的使用很多文章 在这里推荐一个不错的学习网站 点击这里  本文仅收集在使用Git过程中遇到的问题、进行记录 以便日后查找 不断更新中… Git 命令init1$ git init 执行此命令之后、会在当前文件夹下生成 .git 隐藏文件 用于管理仓库 add1$ git add &amp;lt;file ...&amp;gt; 使用 add 命令 用于将文件添加">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-15T10:47:21.663Z">
+<meta property="og:updated_time" content="2018-08-28T09:04:07.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git使用记录">
 <meta name="twitter:description" content="前言Git 是最优秀的分布式代码管理工具、有关git的使用很多文章 在这里推荐一个不错的学习网站 点击这里  本文仅收集在使用Git过程中遇到的问题、进行记录 以便日后查找 不断更新中… Git 命令init1$ git init 执行此命令之后、会在当前文件夹下生成 .git 隐藏文件 用于管理仓库 add1$ git add &amp;lt;file ...&amp;gt; 使用 add 命令 用于将文件添加">
@@ -340,7 +340,8 @@
 <p>使用 pull 命令 更新本地文件</p>
 <h4 id="pull-1"><a href="#pull-1" class="headerlink" title="pull"></a>pull</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
 <p>使用 pull 命令 更新本地文件</p>
-
+<h4 id="stash"><a href="#stash" class="headerlink" title="stash"></a>stash</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span> stash 将目前工作区的文件保存到暂存区中</span><br><span class="line">git stash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 使用 stash pop 恢复到暂存区文件最新版本</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+<h3 id="异常系列"><a href="#异常系列" class="headerlink" title="异常系列"></a>异常系列</h3>
       
     </div>
     
@@ -351,7 +352,7 @@
         <p><span>本文标题:</span><a href="/2018/07/15/Git使用记录/">Git使用记录</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">ShiShouFeng</a></p>
         <p><span>发布时间:</span>2018-07-15, 13:16:02</p>
-        <p><span>最后更新:</span>2018-07-15, 18:47:21</p>
+        <p><span>最后更新:</span>2018-08-28, 17:04:07</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/15/Git使用记录/" title="Git使用记录">https://shishoufengwise1234.github.io/blog/2018/07/15/Git使用记录/</a>
             <span class="copy-path" data-clipboard-text="原文: https://shishoufengwise1234.github.io/blog/2018/07/15/Git使用记录/　　作者: ShiShouFeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -387,7 +388,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-命令"><span class="toc-number">2.</span> <span class="toc-text">Git 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#init"><span class="toc-number">2.1.</span> <span class="toc-text">init</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add"><span class="toc-number">2.2.</span> <span class="toc-text">add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#commit"><span class="toc-number">2.3.</span> <span class="toc-text">commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#push"><span class="toc-number">2.4.</span> <span class="toc-text">push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pull"><span class="toc-number">2.5.</span> <span class="toc-text">pull</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pull-1"><span class="toc-number">2.6.</span> <span class="toc-text">pull</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-命令"><span class="toc-number">2.</span> <span class="toc-text">Git 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#init"><span class="toc-number">2.1.</span> <span class="toc-text">init</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add"><span class="toc-number">2.2.</span> <span class="toc-text">add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#commit"><span class="toc-number">2.3.</span> <span class="toc-text">commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#push"><span class="toc-number">2.4.</span> <span class="toc-text">push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pull"><span class="toc-number">2.5.</span> <span class="toc-text">pull</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pull-1"><span class="toc-number">2.6.</span> <span class="toc-text">pull</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stash"><span class="toc-number">2.7.</span> <span class="toc-text">stash</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常系列"><span class="toc-number">3.</span> <span class="toc-text">异常系列</span></a></li></ol>
         
     </div>
     <style>
@@ -457,7 +458,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/Android-adb命令收集/">Android-adb命令收集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/Java-反射《一》/">Java-反射《一》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android-面试问题总结一Java篇/">Android-面试问题总结一Java篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android虚拟机相关问题/">Android虚拟机相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/Android-TextView使用记录/">Android-TextView使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Git使用记录/">Git使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Android开发中琐碎问题记录/">Android开发中琐碎问题记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/31/Android-开发中错误总结/">Android-开发中错误总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/Java-动态代理-原理分析《二》/">Java-动态代理-原理分析《二》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/Java-动态代理《一》/">Java-动态代理《一》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/Android-adb命令收集/">Android-adb命令收集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/Java-反射《一》/">Java-反射《一》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android-面试问题总结一Java篇/">Android-面试问题总结一Java篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android虚拟机相关问题/">Android虚拟机相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/Android-TextView使用记录/">Android-TextView使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Git使用记录/">Git使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Android开发中琐碎问题记录/">Android开发中琐碎问题记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/hello-world/">Hello World</a></li></ul>
 
 
 

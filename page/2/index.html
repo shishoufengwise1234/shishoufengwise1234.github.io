@@ -14,28 +14,20 @@
 <meta name="author" content="ShiShouFeng" />
 
 
+    
+    
 
-<meta name="description" content="引言：从安装软件到发布文章 期间遇到太多的坑了、真是分分钟想放弃 到最后完成 特写一篇文章 记录其中的问题、希望能帮到有需要的人！ 前期准备1、Git2、Hexo3、Sublime Text34、注册GitHub账号 注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可 配置GitHub1、新建Respsitory其中Repository n">
-<meta name="keywords" content="杂项,Hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录">
-<meta property="og:url" content="https://shishoufengwise1234.github.io/blog/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/index.html">
+
+<meta name="description" content="一个普通的码农工作中的点滴记录">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sky">
+<meta property="og:url" content="https://shishoufengwise1234.github.io/blog/page/2/index.html">
 <meta property="og:site_name" content="Sky">
-<meta property="og:description" content="引言：从安装软件到发布文章 期间遇到太多的坑了、真是分分钟想放弃 到最后完成 特写一篇文章 记录其中的问题、希望能帮到有需要的人！ 前期准备1、Git2、Hexo3、Sublime Text34、注册GitHub账号 注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可 配置GitHub1、新建Respsitory其中Repository n">
+<meta property="og:description" content="一个普通的码农工作中的点滴记录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/images/create_respsitory.png">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/2018-07/Snip20180713_12.png">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/2018-07/Snip20180713_13.png">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/2018-07/Snip20180712_10.png">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/2018-07/Snip20180713_11.png">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/2018-07/install_23_12.png">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/2018-07/Snip20180713_14.png">
-<meta property="og:image" content="https://shishoufengwise1234.github.io/img/2018-07/Snip20180713_15.png">
-<meta property="og:updated_time" content="2018-07-13T09:59:31.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录">
-<meta name="twitter:description" content="引言：从安装软件到发布文章 期间遇到太多的坑了、真是分分钟想放弃 到最后完成 特写一篇文章 记录其中的问题、希望能帮到有需要的人！ 前期准备1、Git2、Hexo3、Sublime Text34、注册GitHub账号 注：1、安装Git和Sublime Text3比较简单 在这里不做介绍 2、安装Hexo按照官网步骤完成即可 配置GitHub1、新建Respsitory其中Repository n">
-<meta name="twitter:image" content="https://shishoufengwise1234.github.io/img/images/create_respsitory.png">
+<meta name="twitter:title" content="Sky">
+<meta name="twitter:description" content="一个普通的码农工作中的点滴记录">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -63,11 +55,13 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
+    <style> .article { opacity: 0;} </style>
+
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录 | Sky</title>
+<title>Sky</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -76,8 +70,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: false,
-        isPost: true,
+        isHome: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -296,7 +290,9 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
+  
+    <article id="post-使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/" class="article-date">
@@ -314,23 +310,12 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a>
     </h1>
   
 
       </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂项/">杂项</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -436,127 +421,101 @@
       
     </div>
     
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">ShiShouFeng</a></p>
-        <p><span>发布时间:</span>2018-07-11, 14:59:22</p>
-        <p><span>最后更新:</span>2018-07-13, 17:59:31</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/" title="使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录">https://shishoufengwise1234.github.io/blog/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://shishoufengwise1234.github.io/blog/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/　　作者: ShiShouFeng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂项/">杂项</a></li></ul>
     </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/07/15/Android开发中琐碎问题记录/">
-                    Android开发中琐碎问题记录
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/06/29/hello-world/">
-                    Hello World
-                </a>
-            </div>
-        
-    </nav>
-
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
   
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#引言："><span class="toc-number">1.</span> <span class="toc-text">引言：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前期准备"><span class="toc-number">2.</span> <span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置GitHub"><span class="toc-number">3.</span> <span class="toc-text">配置GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装并配置-Hexo"><span class="toc-number">4.</span> <span class="toc-text">安装并配置 Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#关联GitHub"><span class="toc-number">4.1.</span> <span class="toc-text">关联GitHub</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo常用命令"><span class="toc-number">5.</span> <span class="toc-text">Hexo常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#init"><span class="toc-number">5.1.</span> <span class="toc-text">init</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#new"><span class="toc-number">5.2.</span> <span class="toc-text">new</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#generate"><span class="toc-number">5.3.</span> <span class="toc-text">generate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#publish"><span class="toc-number">5.4.</span> <span class="toc-text">publish</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#server"><span class="toc-number">5.5.</span> <span class="toc-text">server</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#deploy"><span class="toc-number">5.6.</span> <span class="toc-text">deploy</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#clean"><span class="toc-number">5.7.</span> <span class="toc-text">clean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#list"><span class="toc-number">5.8.</span> <span class="toc-text">list</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Sublime-Text3-插件-Package-Control"><span class="toc-number">6.</span> <span class="toc-text">安装Sublime Text3 插件 Package Control</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用"><span class="toc-number">7.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#启动-auto-save-插件"><span class="toc-number">7.0.1.</span> <span class="toc-text">启动 auto-save 插件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#启动-markdown-preview-插件"><span class="toc-number">7.0.2.</span> <span class="toc-text">启动 markdown preview  插件</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#结束"><span class="toc-number">7.1.</span> <span class="toc-text">结束</span></a></li></ol></li></ol>
-        
+
+
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/29/hello-world/" class="article-date">
+      <time datetime="2018-06-29T02:16:10.893Z" itemprop="datePublished">2018-06-29</time>
+</a>
+
+
     </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-5 i,
-        .toc-level-5 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
+  
+  <div class="article-inner">
     
-<div class="share">
+      <input type="hidden" class="isFancy" />
     
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录　| Sky　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
     
-
-    
-</div>
-
-
-
-
-
-
-
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
+      <header class="article-header">
         
-            <a href="/2018/07/15/Android开发中琐碎问题记录/" title="上一篇: Android开发中琐碎问题记录">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/29/hello-world/">Hello World</a>
+    </h1>
+  
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
-        
-            <a href="/2018/06/29/hello-world/" title="下一篇: Hello World">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
+      
     </div>
+    
+    <div class="article-info article-info-index">
+      
+      
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/31/Android-开发中错误总结/">Android-开发中错误总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/Java-动态代理-原理分析《二》/">Java-动态代理-原理分析《二》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/Java-动态代理《一》/">Java-动态代理《一》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/24/Android-adb命令收集/">Android-adb命令收集</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/Java-反射《一》/">Java-反射《一》</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android-面试问题总结一Java篇/">Android-面试问题总结一Java篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/Android虚拟机相关问题/">Android虚拟机相关问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/21/Android-TextView使用记录/">Android-TextView使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Git使用记录/">Git使用记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/15/Android开发中琐碎问题记录/">Android开发中琐碎问题记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/11/使用Hexo-GitHubPagers-SublimeText3-Mardown搭建个人blog记录/">使用Hexo+GitHubPagers+SublimeText3+Mardown搭建个人blog记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/29/hello-world/">Hello World</a></li></ul>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
 
 
-    <script>
-        
-    </script>
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">
